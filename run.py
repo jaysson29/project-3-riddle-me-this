@@ -10,12 +10,14 @@ app.secret_key = 'some_secret'
 data = []
 
 def write_to_file(filename, data):
-    with open(filename, "w") as file:
+    with open(filename, "a") as file:
         file.writelines(data)
         
 def add_message(user, message):
-    write_to_file("data/users.txt", "({0}) - {1}\n".format(
-            user.title(), "w"))
+    write_to_file("data/messages.txt", "({0}) - {1}\n".format(
+            user.title(),
+            message))
+            
 def get_all_messages():
     message = []
     with open("data/messages.txt", "r") as chat_messages:
@@ -28,7 +30,7 @@ def add_users(user):
         
 def get_all_users():
     users = []
-    with open("data/users.txt", "r") as user_messages:
+    with open("data/user.txt", "r") as user_messages:
         users = user_messages.readlines()
     return users
     
@@ -83,7 +85,7 @@ def username(user):
     online_users = [row for row in online_users_file if len(row.strip()) > 0]
     online_users_file.close()
     
-    return render_template("riddle.html", username=user, chat_messages=message, data=data, online_users=online_users, riddle=riddle)
+    return render_template("riddle.html", user=user, chat_messages=message, data=data, online_users=online_users, riddle=riddle)
     
 @app.route('/players', methods=["GET", "POST"])
 def players(user):
@@ -91,7 +93,7 @@ def players(user):
     if request.method == "POST":
         add_users(request.form["user"] + "\n")
     user = get_all_users()
-    return render_template("riddle.html", username=user)
+    return render_template("riddle.html", user=user)
     
 @app.route('/<user>/<message>')
 def send_message(user, message):
