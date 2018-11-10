@@ -1,0 +1,29 @@
+.user-section {
+    display: block;
+    left: 25%;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.title {
+    margin-left: 15%;
+}
+
+.user-name {
+    width: 30% !important;
+    margin-left: 0%;
+    text-align: center;
+}
+
+.start {
+    width: 30%;
+    margin-left: 0%;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+}
