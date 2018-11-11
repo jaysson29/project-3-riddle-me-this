@@ -22,6 +22,7 @@ in Python.
 http://learnpythonthehardway.org/book/
 
 * Full book: http://learnpythonthehardway.org
+** Live Deployment: http://project-3-riddle-jason.herokuapp.com/jaysson29
 
 ## Starting from the Terminal
 
