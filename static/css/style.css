@@ -1,3 +1,8 @@
+body{
+    color: #8f0000;
+    background-color: #000;
+}
+
 .user-section {
     display: block;
     left: 25%;
@@ -13,11 +18,21 @@
     width: 30% !important;
     margin-left: 0%;
     text-align: center;
+    color: #a94442 !important;
+}
+
+.start:hover, .start:focus{
+    color: #000 !important;
+    background-color: #a94442 !important;
+    border-color: #333333 !important;
 }
 
 .start {
     width: 30%;
     margin-left: 0%;
+    color: #a94442;
+    background-color: #333333;
+    border-color: #a94442;
 }
 .footer {
   bottom: 0;
@@ -29,23 +44,36 @@
 }
 
 .boxes-top-bar{
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 15px 15px 0px 0px !important;
+    color: #000 !important;
+    background-color: #a94442 !important;
+    border-color: #0089ff !important;
 }
 
 .boxes-content{
-    border-radius: 0px 0px 15px 15px;
-    background-color: #ccc;
+    border-radius: 0px 0px 15px 15px !important;
+    background-color: rgba(141, 141, 141, 0.16) !important;
     height: 100%;
 }
 
 .answer-input{
     width: 100% !important;
     margin-top: 15px;
+    color: #a94442 !important;
 }
 
 .answer-button{
    width: 100%; 
    margin-top: 15px;
+   color: #a94442;
+   background-color: #333333;
+   border-color: #a94442;
+}
+
+.answer-button:hover ,.answer-button:focus{
+    color: #000 !important;
+    background-color: #a94442 !important;
+    border-color: #333333 !important;
 }
 
 .list{
@@ -56,4 +84,13 @@
 
 .again:hover, .again:focus{
     text-decoration: none !important;
+}
+
+.panel{
+    background-color: #000;
+}
+
+.form-control {
+    background-color: #333;
+    border: 1px solid #a94442;
 }
