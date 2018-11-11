@@ -1,0 +1,6 @@
+Flask==0.12.2
+dj-database-url==0.4.2
+html5lib==0.999
+requests==2.2.1
+urllib3==1.7.1
+wheel==0.24.0
