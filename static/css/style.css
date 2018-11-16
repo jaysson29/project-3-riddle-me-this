@@ -1,13 +1,14 @@
 body{
     color: #8f0000;
-    background-color: #000;
+    background-image: url("img/background_test3.png");
+    background-color: black;
 }
 
 .user-section {
     display: block;
     left: 25%;
     text-align: center;
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
 .title {
@@ -86,11 +87,46 @@ body{
     text-decoration: none !important;
 }
 
-.panel{
+.panel {
     background-color: #000;
+    border-radius: 15px 15px 15px 15px !important;
 }
 
 .form-control {
     background-color: #333;
     border: 1px solid #a94442;
+}
+.backboard {
+    width: 310px;
+    height: 100%;
+    background-color: #333;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 36%;
+    margin-bottom: 1.4%;
+}
+
+.frontboard {
+    border: solid 3px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+
+@media (max-width: 992px){
+    .backboard {
+        width: 225px;
+        height: 100%;
+        background-color: #333;
+        border-radius: 10px 10px 10px 10px;
+        margin-left: 35%;
+    }
+}
+
+@media (max-width: 500px){
+    .backboard {
+        width: 225px;
+        height: 100%;
+        background-color: #333;
+        border-radius: 10px 10px 10px 10px;
+        margin-left: 29%;
+    }
 }

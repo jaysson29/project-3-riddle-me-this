@@ -20,8 +20,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 user-section">
-                        <h1 class"title">Riddle Game</h1>
-                        <h3 class"username">Welcome: {{user}}</h3>
+                        <div class="backboard" style="border: solid 3px; border-radius: 10px 10px 10px 10px;">
+                            <h1 class"title frontboard">Riddle Game</h1>
+                        </div>
+                        <div class="backboard" style="border: solid 3px; border-radius: 10px 10px 10px 10px;">
+                            <h3 class"username frontboard" style="margin-top: 4%;">Welcome: {{user}}</h3>
+                        </div>
                         <div class="mailing-list">
                             <!-- JSON DATA-->
                             <h3 class="riddle">{{ data[riddle]["description"] }}</h3>
@@ -30,7 +34,7 @@
                     
                     <div class="container">
                         <div class="col-md-4">
-                            <div class="panel panel-primary" style="border:0px; padding-top:15px;">
+                            <div class="panel panel-primary" style="border:0px;">
                                 <div class="panel-heading top-bar boxes-top-bar">
                                     <h3 class="panel-title">Online Users</h3>
                                 </div>
@@ -55,7 +59,7 @@
                         </div>
                         
                         <div class="col-md-4">
-                            <div class="panel panel-primary" style="border:0px; padding-top:15px;">
+                            <div class="panel panel-primary" style="border:0px;">
                                 <div class="panel-heading top-bar boxes-top-bar">
                                     <h3 class="panel-title">Incorrect Attempts</h3>
                                 </div>
@@ -85,9 +89,9 @@
     <script type="text/javascript">
         setInterval(function () {
             $.getJSON({
-                url: "/users/online",
+                url: "/<user>",
                 success: function (data) {
-                    onlineUsersList = document.getElementById("online-users-list");
+                    onlineUsersList = document.getElementById("online_users");
                     onlineUsersList.innerHTML = '';
                     for (var i = 0; i < data.length; i++) {
                         var li = document.createElement(li.style="list-style-type: none; ");

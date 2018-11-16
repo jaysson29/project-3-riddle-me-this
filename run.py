@@ -62,7 +62,12 @@ def username(user):
     riddle = 0
     
     if request.method == "POST":
-        write_to_file("data/online_users.txt", user + "\n")
+        ###write_to_file("data/online_users.txt", user + "\n")###
+        with open('data/online_users.txt') as users:
+            if user in users.read():
+                print("already User online")
+            else :
+                write_to_file("data/online_users.txt", user + "\n")
         
         riddle = int(request.form["riddle"])
         
@@ -77,6 +82,7 @@ def username(user):
             
     if request.method == "POST":
         if user_response == "fiiiish" and riddle > 10:
+            os.remove("data/online_users.txt");
             return render_template("endgame.html")
     
     message = get_all_messages()
@@ -94,11 +100,6 @@ def players(user):
         add_users(request.form["user"] + "\n")
     user = get_all_users()
     return render_template("riddle.html", user=user)
-    
-@app.route('/<user>/<message>')
-def send_message(user, message):
-    add_message(user, message)
-    return redirect(user)
     
 @app.route('/<user>/log_off', methods=["POST"])
 def log_user_off(user):
