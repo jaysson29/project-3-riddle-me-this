@@ -3,11 +3,12 @@ import json
 import dj_database_url
 
 from datetime import datetime
-from flask import Flask, redirect, render_template, request, flash, jsonify
+from flask import Flask, redirect, render_template, request, flash, jsonify, session
 
 app = Flask(__name__)
 app.secret_key = 'some_secret'
 data = []
+online_users = []
 
 def write_to_file(filename, data):
     with open(filename, "a") as file:
@@ -34,27 +35,30 @@ def get_all_users():
         users = user_messages.readlines()
     return users
     
-@app.route('/users/online', methods=["GET"])
-def online_users():
-    online_users_file = open("data/online_users.txt")
-    online_users = [row for row in online_users_file if len(row.strip()) > 0]
-    online_users_file.close()
-    
-    return jsonify(online_users)
     
 @app.route('/', methods=["GET", "POST"])
 def index():
     """Main Page"""
     # Get POST request
     if request.method == "POST":
-        write_to_file("data/user.txt", request.form["user"] + "\n")
-        write_to_file("data/online_users.txt", request.form["user"] + "\n")
+        session["user"] = request.form["user"]
+        online_users.append(request.form["user"])
         return redirect(request.form["user"])
+        
+    if "user" in session:
+        if session["user"] not in online_users:
+            online_users.append(session["user"])
+        
+        return redirect(request.form["user"])
+        
     return render_template("main.html")
     
 @app.route('/<user>', methods=["GET", "POST"])
 def username(user):
     """Display chat messages"""
+    if "user" not in session:
+        return redirect("/")
+        
     data = []
     with open("data/riddles.json", "r") as json_data:
         data = json.load(json_data)
@@ -63,12 +67,6 @@ def username(user):
     
     if request.method == "POST":
         ###write_to_file("data/online_users.txt", user + "\n")###
-        with open('data/online_users.txt') as users:
-            if user in users.read():
-                print("already User online")
-            else :
-                write_to_file("data/online_users.txt", user + "\n")
-        
         riddle = int(request.form["riddle"])
         
         user_response = request.form["message"].lower()
@@ -82,16 +80,11 @@ def username(user):
             
     if request.method == "POST":
         if user_response == "fiiiish" and riddle > 10:
-            os.remove("data/online_users.txt");
             return render_template("endgame.html")
     
     message = get_all_messages()
     
-    online_users_file = open("data/online_users.txt")
-    online_users = [row for row in online_users_file if len(row.strip()) > 0]
-    online_users_file.close()
-    
-    return render_template("riddle.html", user=user, chat_messages=message, data=data, online_users=online_users, riddle=riddle)
+    return render_template("riddle.html", chat_messages=message, data=data, users=online_users, riddle=riddle, user=session["user"])
     
 @app.route('/players', methods=["GET", "POST"])
 def players(user):
@@ -101,17 +94,13 @@ def players(user):
     user = get_all_users()
     return render_template("riddle.html", user=user)
     
-@app.route('/<user>/log_off', methods=["POST"])
-def log_user_off(user):
-    online_users_file = open("data/online_users.txt")
-    online_users = [row for row in online_users_file if len(row.strip()) > 0 and row.strip() !=user]
-    online_users_file.close()
-    
-    with open("data/online_users.txt", "w") as online_users_file:
-        for user in online_users:
-            online_users_file.write('%s\n' % user)
-            
-    return;
+@app.route("/logout")
+def logout():
+    user = session["user"]
+    session.clear()
+    if user in online_users:
+        online_users.pop(online_users.index(user))
+    return redirect("/")
     
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '0.0.0.0'), port=int(os.environ.get('PORT', 0)), debug=True)

@@ -41,7 +41,7 @@
                                 <!-- User list -->
                                 <div class="panel-body msg_container_base boxes-content">
                                     <ul class="list">
-                                    {% for user in online_users %}
+                                    {% for user in users %}
                                     <li class="bullets">{{user}}</li>
                                     {% endfor %}
                                     </ul>
@@ -56,6 +56,7 @@
                                 <input type="hidden" name="riddle" id="riddle" value={{riddle}}>
                                 <button class="btn btn-success answer-button">Submit</button>
                             </form>
+                                <a href="/logout" class="btn btn-success answer-button">Log Off</a>
                         </div>
                         
                         <div class="col-md-4">
@@ -78,30 +79,8 @@
             </div>
         </div>
     </div>
-    
-    <script type="text/javascript">
-        window.onbeforeunload = function (e) {
-            $.post(window.location.href + '/log_off');
-            return undefined;
-        }
-    </script>
 
-    <script type="text/javascript">
-        setInterval(function () {
-            $.getJSON({
-                url: "/<user>",
-                success: function (data) {
-                    onlineUsersList = document.getElementById("online_users");
-                    onlineUsersList.innerHTML = '';
-                    for (var i = 0; i < data.length; i++) {
-                        var li = document.createElement(li.style="list-style-type: none; ");
-                        li.appendChild(document.createTextNode(data[i]));
-                        onlineUsersList.appendChild(li);
-                    }
-                }
-            });
-        }, 5000);
-    </script>
+    
     <!--make boxes autoscroll to the bottom-->
     <script type="text/javascript">
         $(document).ready(function () {
