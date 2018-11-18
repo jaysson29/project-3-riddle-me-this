@@ -41,22 +41,22 @@ def index():
     """Main Page"""
     # Get POST request
     if request.method == "POST":
-        session["user"] = request.form["user"]
+        session["username"] = request.form["user"]
         online_users.append(request.form["user"])
-        return redirect(request.form["user"])
+        return redirect('/'+ request.form["user"])
+    
+    if "username" in session:
+        if session["username"] not in online_users:
+            online_users.append(session["username"])
         
-    if "user" in session:
-        if session["user"] not in online_users:
-            online_users.append(session["user"])
-        
-        return redirect(request.form["user"])
+        return redirect('/'+ request.form["user"])
         
     return render_template("main.html")
     
 @app.route('/<user>', methods=["GET", "POST"])
 def username(user):
     """Display chat messages"""
-    if "user" not in session:
+    if "username" not in session:
         return redirect("/")
         
     data = []
@@ -84,22 +84,14 @@ def username(user):
     
     message = get_all_messages()
     
-    return render_template("riddle.html", chat_messages=message, data=data, users=online_users, riddle=riddle, user=session["user"])
-    
-@app.route('/players', methods=["GET", "POST"])
-def players(user):
-    """Display chat historal of players"""
-    if request.method == "POST":
-        add_users(request.form["user"] + "\n")
-    user = get_all_users()
-    return render_template("riddle.html", user=user)
+    return render_template("riddle.html", chat_messages=message, data=data, users=online_users, riddle=riddle, username=session["username"])
     
 @app.route("/logout")
 def logout():
-    user = session["user"]
+    username = session["username"]
     session.clear()
-    if user in online_users:
-        online_users.pop(online_users.index(user))
+    if username in online_users:
+        online_users.pop(online_users.index(username))
     return redirect("/")
     
 if __name__ == '__main__':

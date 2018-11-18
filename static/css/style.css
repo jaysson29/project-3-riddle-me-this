@@ -1,25 +1,100 @@
 body{
-    color: #8f0000;
-    background-image: url("img/background_test3.png");
+    color: #00FF04;
+    background-image: url("img/background.png");
     background-color: black;
 }
 
 .user-section {
     display: block;
-    left: 25%;
+    height: 500px;
+    width: 520px;
+    background-color: #5F5F5F;
+    border: 2px solid #FF0000;
+    border-radius: 16px;
     text-align: center;
-    margin-top: 15%;
+    text-shadow: 3px 3px #000000;
+    margin-left: 327px;
+    margin-top: 16.5%;
+}
+
+.user-section-riddle {
+    display: block;
+    height: 100px;
+    width: 131.5%;
+    background-color: #5F5F5F;
+    border: 2px solid #FF0000;
+    border-radius: 16px 16px 0px 0px;
+    text-align: center;
+    text-shadow: 3px 3px #000000;
+    margin-left: -15.5%;
+    margin-top: 90px;
+}
+
+.riddle-section{
+    display: block;
+    height: 620px;
+    width: 131.5%;
+    background-color: #5F5F5F;
+    border: 2px solid #FF0000;
+    border-radius: 0px 0px 16px 16px;
+    text-align: center;
+    text-shadow: 3px 3px #000000;
+    margin-left: -15.5%;
+    margin-top: 23px;
+}
+
+.image-riddle{
+    height: 150px;
+    width: 150px;
+    border-radius: 35px 35px 35px 35px;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .title {
     margin-left: 15%;
+    margin-top: 25px !important;
+}
+
+.sub{
+    font-size: 25px;
+}
+
+.riddle-number{
+    margin-top: 231px;
+}
+.riddle-question{
+    margin-top: 25px;
+    font-size: 32px;
+}
+.riddler {
+    height: 170px;
+    width: 120px;
+    border-radius: 30px;
+}
+
+.attempts{
+    margin-top: 47px;
+    margin-right: 0;
+    margin-left: 1113px;
+    position: fixed;
+    padding: 0;
+    width: 400px;
+    text-align: left;
 }
 
 .user-name {
-    width: 30% !important;
-    margin-left: 0%;
+    width: 90% !important;
+    margin-top: 5%;
     text-align: center;
-    color: #a94442 !important;
+    height: 56px;
+    color: #00FF04 !important;
+}
+
+.user-name::placeholder {
+    color: #00FF04;
+    opacity: 0.25;
 }
 
 .start:hover, .start:focus{
@@ -29,19 +104,24 @@ body{
 }
 
 .start {
-    width: 30%;
-    margin-left: 0%;
-    color: #a94442;
+    width: 90%;
+    height: 56px;
+    margin-top: 5%;
+    color: #00FF04;
     background-color: #333333;
     border-color: #a94442;
+    font-size: 34px;
 }
 .footer {
   bottom: 0;
   text-align: center;
   width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
+  background-color: black;
+  position: fixed;
+  height: 70px; 
+  line-height: 60px;
   margin-top: 0%;
+  color: white;
 }
 
 .boxes-top-bar{
@@ -60,18 +140,51 @@ body{
 .answer-input{
     width: 100% !important;
     margin-top: 15px;
-    color: #a94442 !important;
+    color: #00FF04 !important;
+}
+
+.answer-input::placeholder{
+    color: #00FF04;
+    opacity: 0.5;
 }
 
 .answer-button{
-   width: 100%; 
-   margin-top: 15px;
-   color: #a94442;
-   background-color: #333333;
-   border-color: #a94442;
+    width: 100%;
+    height: 66px;
+    margin-top: 15px;
+    font-size: 36px;
+    color: #00FF04;
+    background-color: #333333;
+    border-color: #a94442;
 }
 
 .answer-button:hover ,.answer-button:focus{
+    color: #000 !important;
+    background-color: #a94442 !important;
+    border-color: #333333 !important;
+}
+
+.logout{
+    color: #00FF04;
+}
+
+.logout:hover , .logout:focus{
+    text-decoration: none;
+    color: #008802;
+}
+
+.answer-button-2{
+    width: 90%;
+    height: 66px;
+    margin-top: 15px;
+    font-size: 36px;
+    color: #00FF04;
+    background-color: #333333;
+    border-color: #a94442;
+    text-shadow: 0px 0px;
+}
+
+.answer-button-2:hover ,.answer-button-2:focus{
     color: #000 !important;
     background-color: #a94442 !important;
     border-color: #333333 !important;
@@ -95,19 +208,18 @@ body{
 .form-control {
     background-color: #333;
     border: 1px solid #a94442;
+    height: 66px;
+    text-align: center;
+    font-size: 36px;
 }
 .backboard {
-    width: 310px;
-    height: 100%;
-    background-color: #333;
-    border-radius: 10px 10px 10px 10px;
-    margin-left: 36%;
-    margin-bottom: 1.4%;
+    font-size: 37px;
 }
 
 .frontboard {
     border: solid 3px;
     border-radius: 10px 10px 10px 10px;
+    font-size: 36px;
 }
 
 

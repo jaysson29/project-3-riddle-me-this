@@ -2,68 +2,81 @@
   {
     "name": "riddle_0",
     "description": "What can point in every direction but can't reach the destination by itself?",
-    "answer": "your finger"
+    "answer": "your finger",
+    "number": 1
   },
   {
     "name": "riddle_1",
     "description": "What is the worst vegetable to have on a ship?",
-    "answer": "a leak"
+    "answer": "a leak",
+    "number": 2
   },
   {
     "name": "riddle_2",
     "description": "Why was the picture sent to jail?",
-    "answer": "it was framed"
+    "answer": "it was framed",
+    "number": 3
   },
   {
     "name": "riddle_3",
     "description": "Joe’s father had three son’s Snap, Crackle and?",
-    "answer": "joe"
+    "answer": "joe",
+    "number": 4
   },
   {
     "name": "riddle_4",
     "description":
       "I am a seed with three letters in my name. Take away the last two and I still sound the same. What am I?",
-    "answer": "pee"
+    "answer": "pee",
+    "number": 5
   },
   {
     "name": "riddle_5",
     "description": "What never gets any wetter no matter how hard it rains?",
-    "answer": "water"
+    "answer": "water",
+    "number": 6
   },
   {
     "name": "riddle_6",
     "description": "What is something that you always have but always leave behind?",
-    "answer": "fingerprints"
+    "answer": "fingerprints",
+    "number": 7
   },
   {
     "name": "riddle_7",
     "description": "Which berry makes a harsh noise?",
-    "answer": "raspberry"
+    "answer": "raspberry",
+    "number": 8
   },
   {
     "name": "riddle_8",
     "description": "What do you get when you mix lemons with gun powder?",
-    "answer": "lemonades"
+    "answer": "lemonades",
+    "number": 9
   },
   {
     "name": "riddle_9",
     "description": "Which word in the dictionary is spelled incorrectly?",
-    "answer": "incorrectly"
+    "answer": "incorrectly",
+    "number": 10
   },
   {
     "name": "riddle_10",
     "description":
       "What when read from right to left is a servant but when read from left to right is a ruler?",
-    "answer": "god"
+    "answer": "god",
+    "number": 11
   },
   {
     "name": "riddle_11",
     "description": "What do you call a fish with 4 eyes?",
-    "answer": "fiiiish"
+    "answer": "fiiiish",
+    "number": 12
   },
     {
     "name": "riddle_12",
     "description": "",
-    "answer": ""
+    "answer": "",
+    "number": 0
   }
 ]
