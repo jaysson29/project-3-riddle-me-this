@@ -205,6 +205,10 @@ body{
     border-radius: 15px 15px 15px 15px !important;
 }
 
+.panel-title{
+    color: #00FF04;
+}
+
 .form-control {
     background-color: #333;
     border: 1px solid #a94442;
