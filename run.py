@@ -14,10 +14,11 @@ def write_to_file(filename, data):
     with open(filename, "a") as file:
         file.writelines(data)
         
-def add_message(user, message):
-    write_to_file("data/messages.txt", "({0}) - {1}\n".format(
+def add_message(user, number, message):
+    write_to_file("data/messages.txt", "({0})-{1}-{2}   \n".format(
             user.title(),
-            message))
+            number,
+            message,))
             
 def get_all_messages():
     message = []
@@ -25,31 +26,20 @@ def get_all_messages():
         message = [row for row in chat_messages if len(row.strip()) > 0 ]
     return message
     
-def add_users(user):
-    write_to_file("data/user.txt", "({0}) - {1}\n".format(
-        user.title(), user.title))
-        
-def get_all_users():
-    users = []
-    with open("data/user.txt", "r") as user_messages:
-        users = user_messages.readlines()
-    return users
-    
-    
 @app.route('/', methods=["GET", "POST"])
 def index():
     """Main Page"""
     # Get POST request
     if request.method == "POST":
         session["username"] = request.form["user"]
-        online_users.append(request.form["user"])
+        if session["username"] not in online_users:
+            online_users.append(session["username"])
         return redirect('/'+ request.form["user"])
     
     if "username" in session:
         if session["username"] not in online_users:
             online_users.append(session["username"])
-        
-        return redirect('/'+ request.form["user"])
+        return redirect('/')
         
     return render_template("main.html")
     
@@ -70,13 +60,14 @@ def username(user):
         riddle = int(request.form["riddle"])
         
         user_response = request.form["message"].lower()
+        number = data[riddle]["number"]
         
         if data[riddle]["answer"] == user_response:
             # Correct answer and go to next riddle.
             riddle += 1
         else:
             # Wrong answer
-            add_message(user, user_response + "\n")
+            add_message(user,"riddle:" + str(number) , user_response + "\n")
             
     if request.method == "POST":
         if user_response == "fiiiish" and riddle > 10:

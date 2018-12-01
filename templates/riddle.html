@@ -20,13 +20,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 user-section-riddle">
-                        <div class="backboard">
-                            <h1 class"title="" frontboard"="" style="margin: 25px;padding: 0px 70px 0px 10px;float: left;">Riddle Game</h1>
+                        <div class="backboard riddle-game">
+                            <h1 class"title">Riddle Game</h1>
                         </div>
-                        <div class="backboard">
-                            <h1 class"username="" title="" frontboard"="" style="margin: 27px 108px 0px 215px;padding: 0;float: left;">Welcome: {{username}}</h1>
+                        <div class="backboard welcome">
+                            <h1 class"username title frontboard">Welcome: {{username}}</h1>
                         </div>
-                        <div style="float: left;margin: 27px 44px 0px 1365px;padding: 0;font-size: 31px; position: fixed;">
+                        <div class="logout-style">
                             <a href="/logout" class="logout">Logout</a>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             <h3 class="riddle-question">{{ data[riddle]["description"] }}</h3>
                         </div>
                         
-                        <div class="col-md-3" style="margin-left: -25px; margin-top: 45px; text-align: left;">
+                        <div class="col-md-3 online-user-box">
                             <div class="panel panel-primary">
                                 <div class="panel-heading top-bar boxes-top-bar">
                                     <h3 class="panel-title">Online Users</h3>
@@ -66,7 +66,7 @@
                         </div>
                         
                         <!--Form-->
-                        <div class="col-md-6" style="margin-top: 82px;">
+                        <div class="col-md-6 form-answer">
                             <form method="POST" class="form-inline">
                                 <input type="text" class="form-control answer-input" placeholder="Write Your Answer Here..." name="message" id="message" autofocus>
                                 <input type="hidden" name="riddle" id="riddle" value={{riddle}}>
