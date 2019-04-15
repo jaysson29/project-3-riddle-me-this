@@ -2,81 +2,145 @@
   {
     "name": "riddle_0",
     "description": "What can point in every direction but can't reach the destination by itself?",
+    "hint":"Y and F",
     "answer": "your finger",
+    "first": 4,
+    "second": 6,
+    "third": 0,
+    "space": 1,
     "number": 1
   },
   {
     "name": "riddle_1",
     "description": "What is the worst vegetable to have on a ship?",
+    "hint":"A and L",
     "answer": "a leak",
+    "first": 1,
+    "second": 4,
+    "third": 0,
+    "space": 1,
     "number": 2
   },
   {
     "name": "riddle_2",
     "description": "Why was the picture sent to jail?",
+    "hint":"I , W and F",
     "answer": "it was framed",
+    "first": 2,
+    "second": 3,
+    "third": 6,
+    "space": 2,
     "number": 3
   },
   {
     "name": "riddle_3",
     "description": "Joe’s father had three son’s Snap, Crackle and?",
+    "hint":"J",
     "answer": "joe",
+    "first": 3,
+    "second": 0,
+    "third": 0,
+    "space": 0,
     "number": 4
   },
   {
     "name": "riddle_4",
     "description":
       "I am a seed with three letters in my name. Take away the last two and I still sound the same. What am I?",
+    "hint":"P",
     "answer": "pee",
+    "first": 3,
+    "second": 0,
+    "third": 0,
+    "space": 0,
     "number": 5
   },
   {
     "name": "riddle_5",
     "description": "What never gets any wetter no matter how hard it rains?",
+    "hint":"W",
     "answer": "water",
+    "first": 5,
+    "second": 0,
+    "third": 0,
+    "space": 0,
     "number": 6
   },
   {
     "name": "riddle_6",
     "description": "What is something that you always have but always leave behind?",
+    "hint":"F",
     "answer": "fingerprints",
+    "first": 12,
+    "second": 0,
+    "third": 0,
+    "space": 0,
     "number": 7
   },
   {
     "name": "riddle_7",
     "description": "Which berry makes a harsh noise?",
+    "hint":"R",
     "answer": "raspberry",
+    "first": 9,
+    "second": 0,
+    "third": 0,
+    "space": 0,
     "number": 8
   },
   {
     "name": "riddle_8",
     "description": "What do you get when you mix lemons with gun powder?",
+    "hint":"L",
     "answer": "lemonades",
+    "first": 9,
+    "second": 0,
+    "third": 0,
+    "space": 0,
     "number": 9
   },
   {
     "name": "riddle_9",
     "description": "Which word in the dictionary is spelled incorrectly?",
+    "hint":"I",
     "answer": "incorrectly",
+    "first": 11,
+    "second": 0,
+    "third": 0,
+    "space": 0,
     "number": 10
   },
   {
     "name": "riddle_10",
     "description":
-      "What when read from right to left is a servant but when read from left to right is a ruler?",
+    "What when read from right to left is a servant but when read from left to right is a ruler?",
+    "hint":"G",
     "answer": "god",
+    "first": 3,
+    "second": 0,
+    "third": 0,
+    "space": 0,
     "number": 11
   },
   {
     "name": "riddle_11",
     "description": "What do you call a fish with 4 eyes?",
+    "hint":"F",
     "answer": "fiiiish",
+    "first": 8,
+    "second": 0,
+    "third": 0,
+    "space": 0,
     "number": 12
   },
     {
     "name": "riddle_12",
     "description": "",
     "answer": "",
+    "first": 0,
+    "second": 0,
+    "third": 0,
+    "space": 0,
     "number": 0
   }
 ]

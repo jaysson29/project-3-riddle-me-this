@@ -39,7 +39,7 @@ def index():
     if "username" in session:
         if session["username"] not in online_users:
             online_users.append(session["username"])
-        return redirect('/')
+        return redirect('/' + session["username"])
         
     return render_template("main.html")
     
@@ -54,6 +54,7 @@ def username(user):
         data = json.load(json_data)
         
     riddle = 0
+    
     
     if request.method == "POST":
         ###write_to_file("data/online_users.txt", user + "\n")###
@@ -74,8 +75,12 @@ def username(user):
             return render_template("endgame.html")
     
     message = get_all_messages()
+    firstL = range(data[riddle]["first"])
+    secondL = range(data[riddle]["second"])
+    thirdL = range(data[riddle]["third"])
+    spaceS = data[riddle]["space"]
     
-    return render_template("riddle.html", chat_messages=message, data=data, users=online_users, riddle=riddle, username=session["username"])
+    return render_template("riddle.html", chat_messages=message, data=data, users=online_users, riddle=riddle, first=firstL, second=secondL, third=thirdL, space=spaceS, username=session["username"])
     
 @app.route("/logout")
 def logout():
